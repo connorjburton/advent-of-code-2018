@@ -20,20 +20,20 @@ const partTwo = async function partTwo() {
     
     const length = formatted.length;
     while (true) {
-        for (i; i < length; i++) {
-            total = total + formatted[i];
-            
-            if (seen.includes(total)) {
-                return total;
-            }
-
-            seen.push(total);
-
-            if (i === length - 1) {
-                i = -1;
-                continue;
-            }
+        total = total + formatted[i];
+        
+        if (seen.includes(total)) {
+            return total;
         }
+
+        seen.push(total);
+
+        if (i === length - 1) {
+            i = 0;
+            continue;
+        }
+
+        i++;
     }
 }
 
